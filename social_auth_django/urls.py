@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from django.contrib.auth.views import *
 
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     path('users/', include('django.contrib.auth.urls')),
+    path('', include('social_django.urls', namespace='social')),
+   
 ]

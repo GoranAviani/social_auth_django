@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 
 def index(request):
     if request.user.is_authenticated:
-        return redirect('login.html')
+        return render(request,'login1.html')
     else:
 
-        return render(request,'login.html')
+        return redirect('index')
